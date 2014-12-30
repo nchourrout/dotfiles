@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FOLDERS=$(ls -d */);
-EXCLUDED=(themes osx plugins Preferences)
+EXCLUDED=(themes osx plugins Preferences utils bin)
 
 function link_file () {
   local filename=$1

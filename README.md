@@ -11,7 +11,7 @@ Ensure you have installed at least the [command line developer tools](https://de
 You are free to clone the repository anywhere you wish.
 
 ```
-git clone git://github.com/squarefrog/dotfiles.git && cd dotfiles/osx
+git clone git://github.com/nchourrout/dotfiles.git && cd dotfiles/osx
 ./bootstrap.sh COMPUTER_NAME
 ```
 
@@ -31,8 +31,8 @@ As an example, your `~/.gitconfig.local` file might look like this:
 
 ```
 [user]
-  name = Paul Williamson
-  email = squarefrog@gmail.com
+  name = Nicolas Chourrout
+  email = email@address.com
 ```
 
 ## OS X defaults
@@ -44,20 +44,13 @@ cd osx
 ./setup_defaults.sh
 ```
 
-## Install Homebrew formulae
+## Install Homebrew formulae and native apps
 
 You can use a Brewfile to set up any required [Homebrew](http://brew.sh/) formulae:
 
 ```sh
-brew bundle $DOTFILES/osx/Brewfile
-```
-
-## Install native apps with `brew cask`
-
-You could also install native apps with [`brew cask`](https://github.com/caskroom/homebrew-cask):
-
-```sh
-brew bundle $DOTFILES/osx/Caskfile
+cd osx
+./brew.sh
 ```
 
 ## Resources

@@ -18,9 +18,9 @@ echo " ╚═════╝  ╚═════╝  ╚═════╝    �
 echo "                                                                             ";
 echo "                                                                             ";
 
-if type_exists 'brew'; then
+if ! type_exists 'brew'; then
   e_arrow "Installing homebrew..."
-  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
   e_arrow "Updating homebrew..."
   brew update && brew upgrade

@@ -1,9 +1,8 @@
-# Easier navigation: .., ..., ...., ....., ~ and -
+# Easier navigation: .., ..., ...., ....., --
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Allow formatting as json
@@ -12,7 +11,7 @@ alias json_formatter="python -mjson.tool"
 # Git
 alias gs="git status"
 alias gaa="git add --all"
-alias ls="ls -G"
+alias ls="ls -FGal"
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
