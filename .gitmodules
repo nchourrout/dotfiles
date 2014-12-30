@@ -1,3 +1,6 @@
 [submodule "plugins/zsh-syntax-highlighting"]
 	path = plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "bin/lift-downloader"]
+	path = bin/lift-downloader
+	url = git://github.com/nchourrout/lift-downloader.git
