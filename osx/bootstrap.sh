@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # This is a script for bootstrapping OS X setup
 
+source ../utils/utils.sh
+
 if ! which xcodebuild &> /dev/null; then
-  echo "Xcode Command Line Tools must be installed before running this script"
+  e_error "Xcode Command Line Tools must be installed before running this script"
   exit
 fi
 
@@ -17,16 +19,16 @@ echo " ╚═════╝  ╚═════╝  ╚═════╝    �
 echo "                                                                             ";
 echo "                                                                             ";
 
-if ! which brew &> /dev/null; then
-  echo "Installing homebrew..."
+if type_exists 'brew'; then
+  e_arrow "Installing homebrew..."
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 else
-  echo "Updating homebrew..."
+  e_arrow "Updating homebrew..."
   brew update && brew upgrade
 fi
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  echo "Installing oh my zsh..."
+  e_arrow "Installing oh my zsh..."
   git clone https://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh"
   chsh -s /bin/zsh
 fi
@@ -73,24 +75,38 @@ fi
 # Install brew bundles
 echo
 echo
-read -p "Install Brews? " -n 1 -r
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  echo "Installing Brews..."
+seek_confirmation "Install Brews"
+if is_confirmed; then
+  e_arrow "Installing Brews..."
   brew bundle $DOTFILES/osx/Brewfile
 fi
 
 echo
-echo
-read -p "Install Casks? " -n 1 -r
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  echo "Installing Casks..."
+seek_confirmation "Install Casks?"
+if is_confirmed; then
+  e_arrow "Installing Casks..."
   brew bundle $DOTFILES/osx/Caskfile
 fi
 
-echo "                                                                        "
-echo "                                                                        "
-echo "........................................................................"
-echo "............................ Bootstrap done ............................"
-echo "........................................................................"
-echo "                                                                        "
-echo "                                                                        "
+# TODO: Add files in bin to Path (do it in manage.sh)
+
+# Install Alcatraz XCode plugin manager
+seek_confirmation "Install Alcatraz?"
+if is_confirmed; then
+    e_arrow "Installing Alcatraz"
+    curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
+fi
+ 
+# Install Wallpapers
+seek_confirmation "Download wallpapers?"
+if is_confirmed; then
+    liftdownloader
+fi
+
+e_success "                                                                        "
+e_success "                                                                        "
+e_success "........................................................................"
+e_success "............................ Bootstrap done ............................"
+e_success "........................................................................"
+e_success "                                                                        "
+e_success "                                                                        "
