@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-# This is a script for bootstrapping OS X setup
 
 source ../utils/utils.sh
 
-if ! which xcodebuild &> /dev/null; then
+if ! type_exists 'xcodebuild'; then
   e_error "Xcode Command Line Tools must be installed before running this script"
-  exit
+  exit 1
 fi
 
 echo "                                                                             ";
@@ -29,8 +28,7 @@ fi
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   e_arrow "Installing oh my zsh..."
-  git clone https://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh"
-  chsh -s /bin/zsh
+  curl -L http://install.ohmyz.sh | sh
 fi
 
 # Symlink all the things
@@ -58,13 +56,13 @@ fi
 
 # Install vim packages
 if [ -d "$DOTFILES/vim/bundle/neobundle.vim" ]; then
-  echo "Updating vim bundles..."
+  e_arrow "Updating vim bundles..."
   cd $DOTFILES/vim/bundle/neobundle.vim
   git pull origin master
   cd ~
   vim -c "NeoBundleInstall!" -c "qa!"
 else
-  echo "Installing vim bundles..."
+  e_arrow "Installing vim bundles..."
   if [ ! -d "$DOTFILES/vim/bundle" ]; then
     mkdir -p $DOTFILES/vim/bundle
   fi
@@ -75,17 +73,10 @@ fi
 # Install brew bundles
 echo
 echo
-seek_confirmation "Install Brews"
+seek_confirmation "Install Brews and Casks"
 if is_confirmed; then
-  e_arrow "Installing Brews..."
-  brew bundle $DOTFILES/osx/Brewfile
-fi
-
-echo
-seek_confirmation "Install Casks?"
-if is_confirmed; then
-  e_arrow "Installing Casks..."
-  brew bundle $DOTFILES/osx/Caskfile
+  e_arrow "Installing brews and casks..."
+  source brew.sh
 fi
 
 # TODO: Add files in bin to Path (do it in manage.sh)
@@ -102,6 +93,8 @@ seek_confirmation "Download wallpapers?"
 if is_confirmed; then
     liftdownloader
 fi
+
+sudo softwareupdate -i -a
 
 e_success "                                                                        "
 e_success "                                                                        "
