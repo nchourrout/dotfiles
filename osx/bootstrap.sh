@@ -37,7 +37,7 @@ cd ..
 
 # Re-source .bashrc to gain access to $DOTFILES alias
 if [[ ! -f $HOME/.shellrc ]];then
-  echo "$HOME/.shellrc does not exist. Exiting."
+  e_error "$HOME/.shellrc does not exist. Exiting."
   exit
 else
   source "$HOME/.bashrc"
