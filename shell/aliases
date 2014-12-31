@@ -13,5 +13,8 @@ alias gs="git status"
 alias gaa="git add --all"
 alias ls="ls -FGal"
 
+# iOS
+alias ios="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app"
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
