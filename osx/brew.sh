@@ -72,7 +72,6 @@ apps=(
   slack
   sourcetree
   sublime-text-3
-  torbrowser
   vlc
 )
  
