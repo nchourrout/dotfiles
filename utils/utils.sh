@@ -98,3 +98,21 @@ if [[ "${OSTYPE}" == $1* ]]; then
 fi
 return 1
 }
+
+# 
+# Start Application if not running
+#
+
+start_if_needed() {
+  local grep_name="[${1:0:1}]${1:1}"
+
+  if [[ -z $(ps aux | grep -e "${grep_name}") ]]; then
+    if [ -e ~/Applications/$1.app ]; then
+      open ~/Applications/$1.app
+    else
+      if [ -e /Applications/$1.app ]; then
+        open /Applications/$1.app
+      fi
+    fi
+  fi
+}

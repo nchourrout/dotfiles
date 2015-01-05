@@ -37,7 +37,7 @@ for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
 		"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
 		"/System/Library/CoreServices/Menu Extras/Volume.menu" \
 		"/System/Library/CoreServices/Menu Extras/User.menu" \
-	  "/System/Library/CoreServices/Menu Extras/Clock.menu"
+	    "/System/Library/CoreServices/Menu Extras/Clock.menu"
 done
 defaults write com.apple.systemuiserver menuExtras -array \
 	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
@@ -353,6 +353,9 @@ defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
 # Set the icon size of Dock items to 64 pixels
 defaults write com.apple.dock tilesize -int 64
+
+# Enable magnification effect on the Dock
+defaults write com.apple.dock magnification -boolean true
 
 # Change minimize/maximize window effect
 defaults write com.apple.dock mineffect -string "genie"
