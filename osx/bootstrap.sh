@@ -94,7 +94,11 @@ if is_confirmed; then
     liftdownloader
 fi
 
-sudo softwareupdate -i -a
+# Update software
+seek_confirmation "Update Apple Software?"
+if is_confirmed; then
+    sudo softwareupdate -i -a
+fi
 
 e_success "                                                                        "
 e_success "                                                                        "
