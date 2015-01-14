@@ -7,16 +7,7 @@ if ! type_exists 'xcodebuild'; then
   exit 1
 fi
 
-echo "                                                                             ";
-echo "                                                                             ";
-echo " ██████╗  ██████╗  ██████╗ ████████╗███████╗████████╗██████╗  █████╗ ██████╗ ";
-echo " ██╔══██╗██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗";
-echo " ██████╔╝██║   ██║██║   ██║   ██║   ███████╗   ██║   ██████╔╝███████║██████╔╝";
-echo " ██╔══██╗██║   ██║██║   ██║   ██║   ╚════██║   ██║   ██╔══██╗██╔══██║██╔═══╝ ";
-echo " ██████╔╝╚██████╔╝╚██████╔╝   ██║   ███████║   ██║   ██║  ██║██║  ██║██║     ";
-echo " ╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ";
-echo "                                                                             ";
-echo "                                                                             ";
+e_header Bootstrap
 
 if ! type_exists 'brew'; then
   e_arrow "Installing homebrew..."
@@ -32,8 +23,11 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 
 # Symlink all the things
-cd ..
-./manage.sh install
+seek_confirmation "Install dotfiles?"
+if is_confirmed; then
+  cd ..
+  ./manage.sh install
+fi
 
 # Re-source .bashrc to gain access to $DOTFILES alias
 if [[ ! -f $HOME/.shellrc ]];then
@@ -72,7 +66,6 @@ fi
 
 # Install brew bundles
 echo
-echo
 seek_confirmation "Install Brews and Casks"
 if is_confirmed; then
   e_arrow "Installing brews and casks..."
@@ -100,10 +93,12 @@ if is_confirmed; then
     sudo softwareupdate -i -a
 fi
 
-e_success "                                                                        "
-e_success "                                                                        "
-e_success "........................................................................"
-e_success "............................ Bootstrap done ............................"
-e_success "........................................................................"
-e_success "                                                                        "
-e_success "                                                                        "
+# Setup Defaults
+seek_confirmation "Customize system defaults?"
+if is_confirmed; then
+  cd ~/.dotfiles
+  source setup_defaults.sh
+fi
+
+e_success "Bootstrap done"
+
