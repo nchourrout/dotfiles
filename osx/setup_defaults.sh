@@ -48,7 +48,7 @@ defaults write com.apple.systemuiserver menuExtras -array \
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
 # Show scrollbars automatically
-defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
+defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 # Disable smooth scrolling

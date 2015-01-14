@@ -9,7 +9,7 @@ alias -- -="cd -"
 alias json_formatter="python -mjson.tool"
 
 # Git
-alias gs="git status"
+#alias gs="git status" #conflicting with ghostscript
 alias gaa="git add --all"
 alias ls="ls -FGal"
 

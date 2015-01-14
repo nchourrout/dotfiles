@@ -30,6 +30,7 @@ binaries=(
   ghostscript
   git
   hub
+  mutt
   node
   python
   rename

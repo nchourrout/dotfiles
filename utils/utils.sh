@@ -18,7 +18,7 @@ blue=$(tput setaf 38)
 # Headers and  Logging
 #
 
-e_header() { printf "\n${bold}${purple}==========  %s  ==========${reset}\n" "$@"
+e_header() { printf "\n${bold}${purple}==========  %s  ==========${reset}\n\n" "$@"
 }
 e_arrow() { printf "➜ $@\n"
 }
