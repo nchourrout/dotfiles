@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FOLDERS=$(ls -d */);
-EXCLUDED=(themes osx plugins Preferences utils)
+EXCLUDED=(themes osx plugins utils bin)
 
 function link_file () {
   local filename=$1
@@ -48,6 +48,10 @@ function die () {
 
 if [ ! -e $HOME/.vim ]; then
   ln -s $PWD/vim $HOME/.vim
+fi
+
+if [ ! -e $HOME/.dotfiles ]; then
+  ln -s $PWD $HOME/.dotfiles
 fi
 
 for folder in $FOLDERS; do
