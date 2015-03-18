@@ -51,6 +51,7 @@ apps=(
   brackets
   charles
   cleanmymac
+  cyberduck
   day-o
   dropbox
   evernote
