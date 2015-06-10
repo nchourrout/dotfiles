@@ -17,6 +17,9 @@ else
   brew update && brew upgrade
 fi
 
+# Install or update cocoapods
+sudo gem install cocoapods
+
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   e_arrow "Installing oh my zsh..."
   curl -L http://install.ohmyz.sh | sh
