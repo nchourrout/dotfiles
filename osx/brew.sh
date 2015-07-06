@@ -25,6 +25,7 @@ $PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 
 binaries=(
   ack
+  adium
   duff
   ffmpeg
   ghostscript
