@@ -59,6 +59,7 @@ apps=(
   google-chrome
   iterm2
   keepingyouawake
+  macid
   mailbox
   qlcolorcode
   qlmarkdown
