@@ -69,7 +69,6 @@ apps=(
   quicklook-json
   simpholders
   skype
-  slack
   sourcetree
   sublime-text-3
   vlc
