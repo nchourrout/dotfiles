@@ -56,6 +56,7 @@ apps=(
   day-o
   dropbox
   evernote
+  fauxpas
   google-chrome
   iterm2
   keepingyouawake
