@@ -41,8 +41,8 @@ else
 fi
 
 # Ensure theme is setup in zsh
-if [ ! -e "$HOME/.oh-my-zsh/themes/squarefrog.zsh-theme" ]; then
-  ln -s $DOTFILES/themes/squarefrog.zsh-theme $HOME/.oh-my-zsh/themes/squarefrog.zsh-theme
+if [ ! -e "$HOME/.oh-my-zsh/themes/nchourrout.zsh-theme" ]; then
+  ln -s $DOTFILES/themes/squarefrog.zsh-theme $HOME/.oh-my-zsh/themes/nchourrout.zsh-theme
 fi
 
 # Install vim packages
