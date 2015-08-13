@@ -71,6 +71,7 @@ apps=(
   skype
   sourcetree
   sublime-text-3
+  textbar
   vlc
 )
 
