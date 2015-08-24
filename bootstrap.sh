@@ -77,6 +77,12 @@ if is_confirmed; then
     e_arrow "Installing Alcatraz"
     curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
 fi
+
+# Install
+seek_confirmation "Install gmailto"
+if is_confirmed; then
+  npm install gmailto -g
+fi
  
 # Install Wallpapers
 seek_confirmation "Download wallpapers?"
