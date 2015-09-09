@@ -70,7 +70,6 @@ apps=(
   simpholders
   skype
   sourcetree
-  sublime-text-3
   textbar
   vlc
 )
