@@ -2,12 +2,21 @@
 
 source ./utils/utils.sh
 
-if ! type_exists 'xcodebuild'; then
-  e_error "Xcode Command Line Tools must be installed before running this script"
-  exit 1
-fi
-
 e_header Bootstrap
+
+# XCode command line tools
+if ! type_exists 'xcodebuild'; then
+  e_arrow "Installing them Xcode CLI tools..."
+  touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
+  PROD=$(softwareupdate -l |
+    grep "\*.*Command Line" |
+    head -n 1 | awk -F"*" '{print $2}' |
+    sed -e 's/^ *//' |
+    tr -d '\n')
+  softwareupdate -i "$PROD" -v;
+else
+  e_arrow "Xcode CLI tools OK"
+fi
 
 if ! type_exists 'brew'; then
   e_arrow "Installing homebrew..."
@@ -104,4 +113,3 @@ if is_confirmed; then
 fi
 
 e_success "Bootstrap done"
-
