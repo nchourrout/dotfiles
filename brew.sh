@@ -36,6 +36,7 @@ binaries=(
   trash
   tree
   vim
+  watch
   wget
 )
 
