@@ -60,7 +60,6 @@ apps=(
   iterm2
   keepingyouawake
   macid
-  mailbox
   qlcolorcode
   qlmarkdown
   qlprettypatch
