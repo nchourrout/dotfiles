@@ -48,6 +48,7 @@ brew cleanup
 
 apps=(
   alfred
+  bartender
   brackets
   charles
   cleanmymac
