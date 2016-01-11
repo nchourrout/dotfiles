@@ -1,3 +1,6 @@
 [submodule "bin/lift-downloader"]
 	path = bin/lift-downloader
 	url = git://github.com/nchourrout/lift-downloader.git
+[submodule "bin/tinypdf"]
+	path = bin/tinypdf
+	url = https://github.com/nchourrout/TinyPDF.git
