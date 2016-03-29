@@ -55,12 +55,9 @@ apps=(
   cyberduck
   day-o
   dropbox
-  evernote
-  fauxpas
   google-chrome
   iterm2
   keepingyouawake
-  macid
   qlcolorcode
   qlmarkdown
   qlprettypatch
