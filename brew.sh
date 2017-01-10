@@ -51,9 +51,7 @@ apps=(
   atom
   bartender
   charles
-  cleanmymac
   cyberduck
-  day-o
   dropbox
   google-chrome
   iterm2
