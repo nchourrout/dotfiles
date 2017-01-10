@@ -48,8 +48,8 @@ brew cleanup
 
 apps=(
   alfred
+  atom
   bartender
-  brackets
   charles
   cleanmymac
   cyberduck
