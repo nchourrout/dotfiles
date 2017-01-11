@@ -72,7 +72,6 @@ brew cask install --appdir="/Applications" ${apps[@]}
 
 brew cask cleanup
 
-start_if_needed Day-O
 start_if_needed Dropbox
 start_if_needed Alfred
 
