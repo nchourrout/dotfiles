@@ -80,13 +80,6 @@ fi
 
 # TODO: Add files in bin to Path (do it in manage.sh)
 
-# Install Alcatraz XCode plugin manager
-seek_confirmation "Install Alcatraz?"
-if is_confirmed; then
-    e_arrow "Installing Alcatraz"
-    curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
-fi
-
 # Install
 seek_confirmation "Install gmailto"
 if is_confirmed; then
