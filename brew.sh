@@ -53,7 +53,6 @@ apps=(
   charles
   cyberduck
   dropbox
-  google-chrome
   iterm2
   keepingyouawake
   qlcolorcode
@@ -61,11 +60,9 @@ apps=(
   qlprettypatch
   qlstephen
   quicklook-json
-  simpholders
   skype
   sourcetree
   textbar
-  vlc
 )
 
 brew cask install --appdir="/Applications" ${apps[@]}
