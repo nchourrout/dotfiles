@@ -54,22 +54,6 @@ if [ ! -e "$HOME/.oh-my-zsh/themes/nchourrout.zsh-theme" ]; then
   ln -s $DOTFILES/themes/squarefrog.zsh-theme $HOME/.oh-my-zsh/themes/nchourrout.zsh-theme
 fi
 
-# Install vim packages
-if [ -d "$DOTFILES/vim/bundle/neobundle.vim" ]; then
-  e_arrow "Updating vim bundles..."
-  cd $DOTFILES/vim/bundle/neobundle.vim
-  git pull origin master
-  cd ~
-  vim -c "NeoBundleInstall!" -c "qa!"
-else
-  e_arrow "Installing vim bundles..."
-  if [ ! -d "$DOTFILES/vim/bundle" ]; then
-    mkdir -p $DOTFILES/vim/bundle
-  fi
-  git clone https://github.com/Shougo/neobundle.vim.git $DOTFILES/vim/bundle/neobundle.vim
-  vim -c "NeoBundleInstall!" -c "qa!"
-fi
-
 # Install brew bundles
 echo
 seek_confirmation "Install Brews and Casks"
