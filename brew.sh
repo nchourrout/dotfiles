@@ -30,6 +30,7 @@ binaries=(
   ghostscript
   git
   hub
+  neovim
   node
   python
   rename
