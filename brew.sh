@@ -49,13 +49,11 @@ brew cleanup
 
 apps=(
   alfred
-  atom
   bartender
-  charles
   cyberduck
-  dropbox
   iterm2
-  keepingyouawake
+  hammerspoon
+  notion
   qlcolorcode
   qlmarkdown
   qlprettypatch
@@ -63,13 +61,13 @@ apps=(
   quicklook-json
   skype
   sourcetree
-  textbar
+  visual-studio-code
 )
 
 brew cask install --appdir="/Applications" ${apps[@]}
 
 brew cask cleanup
 
-start_if_needed Dropbox
 start_if_needed Alfred
+start_if_needed Hammerspoon
 
