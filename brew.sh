@@ -50,7 +50,6 @@ brew cleanup
 apps=(
   alfred
   bartender
-  cyberduck
   iterm2
   hammerspoon
   notion
@@ -59,6 +58,7 @@ apps=(
   qlprettypatch
   qlstephen
   quicklook-json
+  karabiner-elements
   skype
   sourcetree
   visual-studio-code
